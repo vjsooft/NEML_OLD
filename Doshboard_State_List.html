@@ -1,0 +1,1534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Doshboard State List</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <script type='text/javascript' src='./js/jsapi.js'></script>
+  <script src="./js/jquery.min.js"></script>
+  <!-- <script src="./js/popper.min.js"></script> -->
+  
+  <script src="./js/bootstrap.min.js"></script>
+
+  <!-- <script type="text/javascript" src="./js/map.js"></script> -->
+  <script src="https://www.amcharts.com/lib/4/core.js"></script>
+	<script src="https://www.amcharts.com/lib/4/maps.js"></script>
+	<script src="https://www.amcharts.com/lib/4/geodata/india2019High.js"></script>
+	<script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
+
+  <style>
+    #chartdiv {
+		  width: 100%;
+		  height: 500px;
+      filter: drop-shadow(0px 4.53238px 18.1295px rgba(39, 44, 76, 0.22));
+		}
+    .cusBtnGroup{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .cus-Btn{
+      background: #FFFFFF;
+      box-shadow: 0px 1px 4px #A0AAEB;
+      border-radius: 50px;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      padding: 4px 24px;
+      margin: 0 8px;
+      cursor: pointer;
+    }
+    .cus-Btn.active {
+      background: linear-gradient(281.17deg, #272C4C 12.81%, #5761A2 100%), #FFFFFF;
+      box-shadow: 0px 1px 4px #A0AAEB;
+      color: #fff;
+    }
+    .cusHigh .cusIndi{
+      background: linear-gradient(308.33deg, #6966CD 46.47%, #AFADFF 85.51%), 
+                  linear-gradient(180deg, #21D1F8 0%, #19AFD0 69.58%), #FFFFFF;
+    }
+    .cusMidum .cusIndi{
+      background: linear-gradient(180deg, #21D1F8 0%, #19AFD0 69.58%), #FFFFFF;
+    }
+    .cusLow .cusIndi{
+      background: linear-gradient(126.21deg, #FFDF8C 10.93%, #FFB901 91.02%), 
+                  linear-gradient(180deg, #21D1F8 0%, #19AFD0 69.58%), #FFFFFF;
+    }
+    .cusNil .cusIndi{
+      background: linear-gradient(180deg, #FF537D 0%, #FF3943 59.69%), 
+                  linear-gradient(180deg, #21D1F8 0%, #19AFD0 69.58%), #FFFFFF;
+    }
+    .cusIndi{
+      width: 12px;
+      height: 12px;
+      border-radius: 100px;
+      margin-right: 8px;
+    }
+    .cusToolTip{
+      background: #FFFFFF !important;
+      box-shadow: 0px 5px 24px rgba(76, 0, 176, 0.32) !important;
+      border-radius: 12px !important;
+      width: 188px;
+      padding: 11px 13px !important;
+    }
+    .cusToolTip>left{
+      font-family: 'Poppins';
+      font-style: normal;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 16px;
+      margin-bottom: 10px;
+      display: block;
+    }
+    .cusToolTip>left, 
+    .cusToolTipVal{
+      color: #272C4C;
+    }
+    .cusToolTipTit{
+      color: #666666;
+      width: 80%;
+    }
+    .cusToolTipTit,
+    .cusToolTipVal{
+      font-family: 'Poppins';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 16px;
+      padding: 3px 0;
+    }
+  </style>
+</head>
+<body>
+  <main>
+      <!-- Header Code Start -->
+    <header class="cus-header">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-sm-6">
+           <div class="cus-logo-group">
+              <img src="./Img/Statelist/logo-01.png" alt="" title=""/>
+              <span class="cus-logo-gap"></span>
+              <img src="./Img/Statelist/logo-02.png" alt="" title=""/>
+           </div>
+          </div>
+          <div class="col-sm-6 text-right">
+            <img src="./Img/Statelist/RightLogo.png" alt="" title=""/>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- Header Code End -->
+
+    <!-- Body Code Start -->
+    <section class="cus-bodyContainer">
+      <div class="container-fluid">
+        <div class="row">
+          <!-- Body Sidebar Left Start -->
+          <div class="cus-sidebarLeft col-sm-3">
+            <p class="cus-leftsideTit">Total Quantity Procured</p>
+            <h1>170, 333, MT</h1>
+            <p class="cus-leftsideSubTit">Wed Sep 21 2022 09:58:43 GMT+0530 </p>
+            <p class="cus-leftsideTargetTit">Target Procurement: <strong>20K MT</strong> <span class="cus-downGraph"><img src="./Img/Statelist/Icon/GraphDown.png" alt="GraphDown" title="GraphDown"> 2%</span></p>
+            <ul class="cus-leftsidebar-list">
+              <li>
+                <span class="cus-img-list"><img src="./Img/Statelist/Icon/Gardener.png" alt="Gardener" title="Gardener"></span>
+                <span class="cus-cat-list">
+                  <h3>Farmers Enrolled</h3>
+                  <h2>540,549 <span class="cus-downGraph"><img src="./Img/Statelist/Icon/GraphDown.png" alt="" title=""> 2%</span></h2>
+                </span>
+              </li>
+              <li>
+                <span class="cus-img-list"><img src="./Img/Statelist/Icon/GraphUp.png" alt="GraphUp" title="GraphUp"></span>
+                <span class="cus-cat-list">
+                  <h3>Farmers Benefited</h3>
+                  <h2>530,000</h2>
+                </span>
+              </li>
+              <li>
+                <span class="cus-img-list"><img src="./Img/Statelist/Icon/Frame.png" alt="Frame" title="Frame"></span>
+                <span class="cus-cat-list">
+                  <h3>Commodities</h3>
+                  <h2 class="cus-commodities-list">14
+                    <ul>
+                      <li><img src="./Img/Statelist/Icon/Commodities1.png" alt="Commodities" title="Commodities"></li>
+                      <li><img src="./Img/Statelist/Icon/Commodities2.png" alt="Commodities" title="Commodities"></li>
+                      <li><img src="./Img/Statelist/Icon/Commodities3.png" alt="Commodities" title="Commodities"></li>
+                      <li><img src="./Img/Statelist/Icon/Commodities4.png" alt="Commodities" title="Commodities"></li>
+                      <li>10+</li>
+                      
+                    </ul>
+                    <div class="cusCombtnGroup">
+                      <button class="btnShowCommi"><img src="./Img/Statelist/Icon/CommoditiesListArrow.png" alt="CommoditiesListArrow" title="CommoditiesListArrow"></button>  
+                      <button class="btnCloseCommi"><img src="./Img/Statelist/Icon/CommoditiesListCloseArrow.png" alt="CommoditiesListCloseArrow" title="CommoditiesListCloseArrow"></button>  
+                    </div>
+                  </h2>
+                </span>
+              </li>
+              <li>
+                <span class="cus-img-list"><img src="./Img/Statelist/Icon/Payout.png" alt="Payout" title="Payout"></span>
+                <span class="cus-cat-list">
+                  <h3>Payout to Farmers</h3>
+                  <h2>₹ 2,00,430</h2>
+                </span>
+              </li>
+              <li>
+                <p>Target Payout: <strong>₹2,11,654 <span class="cus-downGraph"><img src="./Img/Statelist/Icon/GraphDown.png" alt="" title=""> 2%</span></strong> </p>
+              </li>
+              <li>
+                <img src="./Img/Statelist/RatingRation.png"/>
+              </li>
+            </ul>
+          </div>
+          <div class="cusHideCommList">
+            <ul>
+              <li class="cusMaize">
+                <span class="cusLt">
+                  <img src="./Img/Statelist/GroupList1.png" alt="Gardener" title="Gardener">
+                </span>
+                <span class="cusFt">
+                  <div class="cusCOMTIT">Maize <span class="cus-downGraph">
+                    <img src="./Img/Statelist/Icon/GraphDown.png" alt="GraphDown" title="GraphDown"> 2%</span>
+                  </div>
+                  <div class="cusCOMGRUP">
+                    <span class="cusMSP">
+                      <small>MSP</small>
+                      <h5>₹ 1600</h5>
+                    </span>
+                    <span class="cusPQ">
+                      <small>Procured Quanity</small>
+                      <h5> 1,41,567 MT</h5>
+                    </span>
+                  </div>
+                </span>
+              </li>
+              <li class="cusMustard">
+                <span class="cusLt">
+                  <img src="./Img/Statelist/GroupList2.png" alt="Gardener" title="Gardener">
+                </span>
+                <span class="cusFt">
+                  <div class="cusCOMTIT">Maize <span class="cus-downGraph">
+                    <img src="./Img/Statelist/Icon/GraphDown.png" alt="GraphDown" title="GraphDown"> 2%</span>
+                  </div>
+                  <div class="cusCOMGRUP">
+                    <span class="cusMSP">
+                      <small>MSP</small>
+                      <h5>₹ 1600</h5>
+                    </span>
+                    <span class="cusPQ">
+                      <small>Procured Quanity</small>
+                      <h5> 1,41,567 MT</h5>
+                    </span>
+                  </div>
+                </span>
+              </li>
+              <li class="cusPea">
+                <span class="cusLt">
+                  <img src="./Img/Statelist/GroupList3.png" alt="Gardener" title="Gardener">
+                </span>
+                <span class="cusFt">
+                  <div class="cusCOMTIT">Maize <span class="cus-downGraph">
+                    <img src="./Img/Statelist/Icon/GraphDown.png" alt="GraphDown" title="GraphDown"> 2%</span>
+                  </div>
+                  <div class="cusCOMGRUP">
+                    <span class="cusMSP">
+                      <small>MSP</small>
+                      <h5>₹ 1600</h5>
+                    </span>
+                    <span class="cusPQ">
+                      <small>Procured Quanity</small>
+                      <h5> 1,41,567 MT</h5>
+                    </span>
+                  </div>
+                </span>
+              </li>
+              <li class="cusRice">
+                <span class="cusLt">
+                  <img src="./Img/Statelist/GroupList4.png" alt="Gardener" title="Gardener">
+                </span>
+                <span class="cusFt">
+                  <div class="cusCOMTIT">Maize <span class="cus-downGraph">
+                    <img src="./Img/Statelist/Icon/GraphDown.png" alt="GraphDown" title="GraphDown"> 2%</span>
+                  </div>
+                  <div class="cusCOMGRUP">
+                    <span class="cusMSP">
+                      <small>MSP</small>
+                      <h5>₹ 1600</h5>
+                    </span>
+                    <span class="cusPQ">
+                      <small>Procured Quanity</small>
+                      <h5> 1,41,567 MT</h5>
+                    </span>
+                  </div>
+                </span>
+              </li>
+
+              <li class="cusMaize">
+                <span class="cusLt">
+                  <img src="./Img/Statelist/GroupList1.png" alt="Gardener" title="Gardener">
+                </span>
+                <span class="cusFt">
+                  <div class="cusCOMTIT">Maize <span class="cus-downGraph">
+                    <img src="./Img/Statelist/Icon/GraphDown.png" alt="GraphDown" title="GraphDown"> 2%</span>
+                  </div>
+                  <div class="cusCOMGRUP">
+                    <span class="cusMSP">
+                      <small>MSP</small>
+                      <h5>₹ 1600</h5>
+                    </span>
+                    <span class="cusPQ">
+                      <small>Procured Quanity</small>
+                      <h5> 1,41,567 MT</h5>
+                    </span>
+                  </div>
+                </span>
+              </li>
+              <li class="cusMustard">
+                <span class="cusLt">
+                  <img src="./Img/Statelist/GroupList2.png" alt="Gardener" title="Gardener">
+                </span>
+                <span class="cusFt">
+                  <div class="cusCOMTIT">Maize <span class="cus-downGraph">
+                    <img src="./Img/Statelist/Icon/GraphDown.png" alt="GraphDown" title="GraphDown"> 2%</span>
+                  </div>
+                  <div class="cusCOMGRUP">
+                    <span class="cusMSP">
+                      <small>MSP</small>
+                      <h5>₹ 1600</h5>
+                    </span>
+                    <span class="cusPQ">
+                      <small>Procured Quanity</small>
+                      <h5> 1,41,567 MT</h5>
+                    </span>
+                  </div>
+                </span>
+              </li>
+              <li class="cusPea">
+                <span class="cusLt">
+                  <img src="./Img/Statelist/GroupList3.png" alt="Gardener" title="Gardener">
+                </span>
+                <span class="cusFt">
+                  <div class="cusCOMTIT">Maize <span class="cus-downGraph">
+                    <img src="./Img/Statelist/Icon/GraphDown.png" alt="GraphDown" title="GraphDown"> 2%</span>
+                  </div>
+                  <div class="cusCOMGRUP">
+                    <span class="cusMSP">
+                      <small>MSP</small>
+                      <h5>₹ 1600</h5>
+                    </span>
+                    <span class="cusPQ">
+                      <small>Procured Quanity</small>
+                      <h5> 1,41,567 MT</h5>
+                    </span>
+                  </div>
+                </span>
+              </li>
+              <li class="cusRice">
+                <span class="cusLt">
+                  <img src="./Img/Statelist/GroupList4.png" alt="Gardener" title="Gardener">
+                </span>
+                <span class="cusFt">
+                  <div class="cusCOMTIT">Maize <span class="cus-downGraph">
+                    <img src="./Img/Statelist/Icon/GraphDown.png" alt="GraphDown" title="GraphDown"> 2%</span>
+                  </div>
+                  <div class="cusCOMGRUP">
+                    <span class="cusMSP">
+                      <small>MSP</small>
+                      <h5>₹ 1600</h5>
+                    </span>
+                    <span class="cusPQ">
+                      <small>Procured Quanity</small>
+                      <h5> 1,41,567 MT</h5>
+                    </span>
+                  </div>
+                </span>
+              </li>
+
+              <li class="cusMaize">
+                <span class="cusLt">
+                  <img src="./Img/Statelist/GroupList1.png" alt="Gardener" title="Gardener">
+                </span>
+                <span class="cusFt">
+                  <div class="cusCOMTIT">Maize <span class="cus-downGraph">
+                    <img src="./Img/Statelist/Icon/GraphDown.png" alt="GraphDown" title="GraphDown"> 2%</span>
+                  </div>
+                  <div class="cusCOMGRUP">
+                    <span class="cusMSP">
+                      <small>MSP</small>
+                      <h5>₹ 1600</h5>
+                    </span>
+                    <span class="cusPQ">
+                      <small>Procured Quanity</small>
+                      <h5> 1,41,567 MT</h5>
+                    </span>
+                  </div>
+                </span>
+              </li>
+              <li class="cusMustard">
+                <span class="cusLt">
+                  <img src="./Img/Statelist/GroupList2.png" alt="Gardener" title="Gardener">
+                </span>
+                <span class="cusFt">
+                  <div class="cusCOMTIT">Maize <span class="cus-downGraph">
+                    <img src="./Img/Statelist/Icon/GraphDown.png" alt="GraphDown" title="GraphDown"> 2%</span>
+                  </div>
+                  <div class="cusCOMGRUP">
+                    <span class="cusMSP">
+                      <small>MSP</small>
+                      <h5>₹ 1600</h5>
+                    </span>
+                    <span class="cusPQ">
+                      <small>Procured Quanity</small>
+                      <h5> 1,41,567 MT</h5>
+                    </span>
+                  </div>
+                </span>
+              </li>
+              <li class="cusPea">
+                <span class="cusLt">
+                  <img src="./Img/Statelist/GroupList3.png" alt="Gardener" title="Gardener">
+                </span>
+                <span class="cusFt">
+                  <div class="cusCOMTIT">Maize <span class="cus-downGraph">
+                    <img src="./Img/Statelist/Icon/GraphDown.png" alt="GraphDown" title="GraphDown"> 2%</span>
+                  </div>
+                  <div class="cusCOMGRUP">
+                    <span class="cusMSP">
+                      <small>MSP</small>
+                      <h5>₹ 1600</h5>
+                    </span>
+                    <span class="cusPQ">
+                      <small>Procured Quanity</small>
+                      <h5> 1,41,567 MT</h5>
+                    </span>
+                  </div>
+                </span>
+              </li>
+              <li class="cusRice">
+                <span class="cusLt">
+                  <img src="./Img/Statelist/GroupList4.png" alt="Gardener" title="Gardener">
+                </span>
+                <span class="cusFt">
+                  <div class="cusCOMTIT">Maize <span class="cus-downGraph">
+                    <img src="./Img/Statelist/Icon/GraphDown.png" alt="GraphDown" title="GraphDown"> 2%</span>
+                  </div>
+                  <div class="cusCOMGRUP">
+                    <span class="cusMSP">
+                      <small>MSP</small>
+                      <h5>₹ 1600</h5>
+                    </span>
+                    <span class="cusPQ">
+                      <small>Procured Quanity</small>
+                      <h5> 1,41,567 MT</h5>
+                    </span>
+                  </div>
+                </span>
+              </li>
+
+
+
+
+
+
+
+              
+            </ul>
+          </div>
+          <!-- Body Sidebar Left End -->
+
+          <!-- Body Sidebar Right Start -->
+          <div class="cus-sidebarRight col-sm-9">
+            <div class="row">
+              <div class="cus-outer-nav-tabs-btn">
+                <ul class="nav nav-tabs cus-outer-nav-tabs">
+                  <li class="cus-mapView"><a data-toggle="tab" href="mapView"> <span class="cus-icon-radious"></span> Map View</a></li>
+                  <li class="active cus-listView"><a data-toggle="tab" href="#listView"> <span class="cus-icon-radious"></span> List View</a></li>
+                </ul>
+              </div>
+            </div>
+            
+            <div class="tab-content">
+              <div id="mapView" class="tab-pane fade in active">
+                  <ul class="nav nav-tabs cus-inner-nav-tabs">
+                    <li class="active"><a data-toggle="tab" href="#totalProcurementVM">Total Procurement</a></li>
+                    <li><a data-toggle="tab" href="#kharifVM">Kharif 2021</a></li>
+                    <li><a data-toggle="tab" href="#rabiVM">Rabi 2022</a></li>
+                    <li><a data-toggle="tab" href="#perennialVM">Perennial 2022</a></li>
+                  </ul>
+                  <div class="tab-content">
+                    <div id="totalProcurementVM" class="tab-pane fade in active">
+                      <ul class="cusBtnGroup">
+                        <li class="cus-Btn active">All</li>
+                        <li class="cus-Btn cusHigh"> <span class="cusIndi"></span> High</li>
+                        <li class="cus-Btn cusMidum"> <span class="cusIndi"></span> Medium</li>
+                        <li class="cus-Btn cusLow"> <span class="cusIndi"></span> Low</li>
+                        <li class="cus-Btn cusNil"> <span class="cusIndi"></span> Nil</li>
+                      </ul>
+                      <div id="chartdiv"></div>
+
+
+                      <!-- <div id="visualization"></div> -->
+                    </div>
+                    <div id="kharifVM" class="tab-pane fade">
+                      <h3>Menu 1</h3>
+                      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    </div>
+                    <div id="rabiVM" class="tab-pane fade">
+                      <h3>Menu 2</h3>
+                      <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+                    </div>
+                    <div id="perennialVM" class="tab-pane fade">
+                      <h3>Menu 3</h3>
+                      <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+                    </div>
+                  </div>
+              </div>
+              <div id="listView" class="tab-pane fade">
+                <ul class="nav nav-tabs cus-inner-nav-tabs">
+                  <li class="active"><a data-toggle="tab" href="#totalProcurementVL">Total Procurement</a></li>
+                  <li><a data-toggle="tab" href="#kharifVL">Kharif 2021</a></li>
+                  <li><a data-toggle="tab" href="#rabiVL">Rabi 2022</a></li>
+                  <li><a data-toggle="tab" href="#perennialVL">Perennial 2022</a></li>
+                </ul>
+                <div class="tab-content cus-listView-bg">
+                  <div id="totalProcurementVL" class="tab-pane fade in active">
+                    <div class="row">
+                      <div class="col-sm-7">
+                        <h2 class="cus-PSF">
+                          <strong>PSF Scheme Procurement In</strong>
+                          <span class="btn cus-select-city">India</span>
+                        </h2>
+                        
+                      </div>
+                      <div class="col-sm-5">
+                        <ul class="nav nav-tabs cus-inner-nav-tabs">
+                          <li class="active"><a data-toggle="tab" href="#AlltotalProcurementVL">All</a></li>
+                          <li><a data-toggle="tab" href="#HighVL">High</a></li>
+                          <li><a data-toggle="tab" href="#MediumVL">Medium</a></li>
+                          <li><a data-toggle="tab" href="#LowVL">Low</a></li>
+                          <li><a data-toggle="tab" href="#NilVL">Nil</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="tab-content cus-inner-tab-content">
+                      <div id="AlltotalProcurementVL" class="tab-pane fade in active">
+                        <p>Click on a particular state to view the whole data set</p>
+                        <ul class="cus-state-list">
+                          <li class="active cusSelectedStat">
+                            <img src="Img/Statelist/MP.png" alt="" title=""/>
+                            <h4>Madhya Pradesh</h4>
+                            <p class="cusGraphRation"><img src="Img/Statelist/Icon/GraphDown.png" alt="" title=""/> 2%</p>
+                            <span class="cusMT"> 1,41,567 MT</span>
+                            <span class="cusOT">22, 098</span>
+                          </li>
+                          <li>
+                            <img src="Img/Statelist/Karnataka.png" alt="" title=""/>
+                            <h4>Karnatka </h4>
+                            <p class="cusGraphRation"><img src="Img/Statelist/Icon/GraphDown.png" alt="" title=""/> 2%</p>
+                            <span class="cusMT"> 1,41,567 MT</span>
+                            <span class="cusOT">22, 098</span>
+                          </li>
+                          <li>
+                            <img src="Img/Statelist/Haryana.png" alt="" title=""/>
+                            <h4>Haryana</h4>
+                            <p class="cusGraphRation"><img src="Img/Statelist/Icon/GraphDown.png" alt="" title=""/> 2%</p>
+                            <span class="cusMT"> 1,41,567 MT</span>
+                            <span class="cusOT">22, 098</span>
+                          </li>
+                          <li>
+                            <img src="Img/Statelist/Tamil Nadu.png" alt="" title=""/>
+                            <h4>Tamil Nadu</h4>
+                            <p class="cusGraphRation"><img src="Img/Statelist/Icon/GraphDown.png" alt="" title=""/> 2%</p>
+                            <span class="cusMT"> 1,41,567 MT</span>
+                            <span class="cusOT">22, 098</span>
+                          </li>
+                          <li>
+                            <img src="Img/Statelist/Rajasthan.png" alt="" title=""/>
+                            <h4>Rajasthan</h4>
+                            <p class="cusGraphRation"><img src="Img/Statelist/Icon/GraphDown.png" alt="" title=""/> 2%</p>
+                            <span class="cusMT"> 1,41,567 MT</span>
+                            <span class="cusOT">22, 098</span>
+                          </li>
+                          <li>
+                            <img src="Img/Statelist/Chattisgarh.png" alt="" title=""/>
+                            <h4>Chhatisgarh</h4>
+                            <p class="cusGraphRation"><img src="Img/Statelist/Icon/GraphDown.png" alt="" title=""/> 2%</p>
+                            <span class="cusMT"> 1,41,567 MT</span>
+                            <span class="cusOT">22, 098</span>
+                          </li>
+                          <li>
+                            <img src="Img/Statelist/Gujarat.png" alt="" title=""/>
+                            <h4>Gujarat</h4>
+                            <p class="cusGraphRation"><img src="Img/Statelist/Icon/GraphDown.png" alt="" title=""/> 2%</p>
+                            <span class="cusMT"> 1,41,567 MT</span>
+                            <span class="cusOT">22, 098</span>
+                          </li>
+                        </ul>
+                      </div>
+                      <div id="HighVL" class="tab-pane fade">
+                        <p>Click on a particular state to view the whole data set</p>
+                        <ul class="cus-state-list">
+                          <li>
+                            <img src="Img/Statelist/MP.png" alt="" title=""/>
+                            <h4>Madhya Pradesh</h4>
+                            <p class="cusGraphRation"><img src="Img/Statelist/Icon/GraphDown.png" alt="" title=""/> 2%</p>
+                            <span class="cusMT"> 1,41,567 MT</span>
+                            <span class="cusOT">22, 098</span>
+                          </li>
+                          <li>
+                            <img src="Img/Statelist/Karnataka.png" alt="" title=""/>
+                            <h4>Karnatka </h4>
+                            <p class="cusGraphRation"><img src="Img/Statelist/Icon/GraphDown.png" alt="" title=""/> 2%</p>
+                            <span class="cusMT"> 1,41,567 MT</span>
+                            <span class="cusOT">22, 098</span>
+                          </li>
+                          <li>
+                            <img src="Img/Statelist/Haryana.png" alt="" title=""/>
+                            <h4>Haryana</h4>
+                            <p class="cusGraphRation"><img src="Img/Statelist/Icon/GraphDown.png" alt="" title=""/> 2%</p>
+                            <span class="cusMT"> 1,41,567 MT</span>
+                            <span class="cusOT">22, 098</span>
+                          </li>
+                          <li>
+                            <img src="Img/Statelist/Tamil Nadu.png" alt="" title=""/>
+                            <h4>Tamil Nadu</h4>
+                            <p class="cusGraphRation"><img src="Img/Statelist/Icon/GraphDown.png" alt="" title=""/> 2%</p>
+                            <span class="cusMT"> 1,41,567 MT</span>
+                            <span class="cusOT">22, 098</span>
+                          </li>
+                          <li>
+                            <img src="Img/Statelist/Rajasthan.png" alt="" title=""/>
+                            <h4>Rajasthan</h4>
+                            <p class="cusGraphRation"><img src="Img/Statelist/Icon/GraphDown.png" alt="" title=""/> 2%</p>
+                            <span class="cusMT"> 1,41,567 MT</span>
+                            <span class="cusOT">22, 098</span>
+                          </li>
+                          <li>
+                            <img src="Img/Statelist/Chattisgarh.png" alt="" title=""/>
+                            <h4>Chhatisgarh</h4>
+                            <p class="cusGraphRation"><img src="Img/Statelist/Icon/GraphDown.png" alt="" title=""/> 2%</p>
+                            <span class="cusMT"> 1,41,567 MT</span>
+                            <span class="cusOT">22, 098</span>
+                          </li>
+                          <li>
+                            <img src="Img/Statelist/Gujarat.png" alt="" title=""/>
+                            <h4>Gujarat</h4>
+                            <p class="cusGraphRation"><img src="Img/Statelist/Icon/GraphDown.png" alt="" title=""/> 2%</p>
+                            <span class="cusMT"> 1,41,567 MT</span>
+                            <span class="cusOT">22, 098</span>
+                          </li>
+                        </ul>
+                      </div>
+                      <div id="MediumVL" class="tab-pane fade">
+                        <p>Click on a particular state to view the whole data set</p>
+                        <ul class="cus-state-list">
+                          <li>
+                            <img src="Img/Statelist/MP.png" alt="" title=""/>
+                            <h4>Madhya Pradesh</h4>
+                            <p class="cusGraphRation"><img src="Img/Statelist/Icon/GraphDown.png" alt="" title=""/> 2%</p>
+                            <span class="cusMT"> 1,41,567 MT</span>
+                            <span class="cusOT">22, 098</span>
+                          </li>
+                          <li>
+                            <img src="Img/Statelist/Karnataka.png" alt="" title=""/>
+                            <h4>Karnatka </h4>
+                            <p class="cusGraphRation"><img src="Img/Statelist/Icon/GraphDown.png" alt="" title=""/> 2%</p>
+                            <span class="cusMT"> 1,41,567 MT</span>
+                            <span class="cusOT">22, 098</span>
+                          </li>
+                          <li>
+                            <img src="Img/Statelist/Haryana.png" alt="" title=""/>
+                            <h4>Haryana</h4>
+                            <p class="cusGraphRation"><img src="Img/Statelist/Icon/GraphDown.png" alt="" title=""/> 2%</p>
+                            <span class="cusMT"> 1,41,567 MT</span>
+                            <span class="cusOT">22, 098</span>
+                          </li>
+                          <li>
+                            <img src="Img/Statelist/Tamil Nadu.png" alt="" title=""/>
+                            <h4>Tamil Nadu</h4>
+                            <p class="cusGraphRation"><img src="Img/Statelist/Icon/GraphDown.png" alt="" title=""/> 2%</p>
+                            <span class="cusMT"> 1,41,567 MT</span>
+                            <span class="cusOT">22, 098</span>
+                          </li>
+                          <li>
+                            <img src="Img/Statelist/Rajasthan.png" alt="" title=""/>
+                            <h4>Rajasthan</h4>
+                            <p class="cusGraphRation"><img src="Img/Statelist/Icon/GraphDown.png" alt="" title=""/> 2%</p>
+                            <span class="cusMT"> 1,41,567 MT</span>
+                            <span class="cusOT">22, 098</span>
+                          </li>
+                          <li>
+                            <img src="Img/Statelist/Chattisgarh.png" alt="" title=""/>
+                            <h4>Chhatisgarh</h4>
+                            <p class="cusGraphRation"><img src="Img/Statelist/Icon/GraphDown.png" alt="" title=""/> 2%</p>
+                            <span class="cusMT"> 1,41,567 MT</span>
+                            <span class="cusOT">22, 098</span>
+                          </li>
+                          <li>
+                            <img src="Img/Statelist/Gujarat.png" alt="" title=""/>
+                            <h4>Gujarat</h4>
+                            <p><img src="Img/Statelist/Icon/GraphDown.png" alt="" title=""/> 2%</p>
+                            <span class="cusMT"> 1,41,567 MT</span>
+                            <span class="cusOT">22, 098</span>
+                          </li>
+                        </ul>
+                      </div>
+                      <div id="LowVL" class="tab-pane fade">
+                        <p>Click on a particular state to view the whole data set</p>
+                        <ul class="cus-state-list">
+                          <li>
+                            <img src="Img/Statelist/MP.png" alt="" title=""/>
+                            <h4>Madhya Pradesh</h4>
+                            <p><img src="Img/Statelist/Icon/GraphDown.png" alt="" title=""/> 2%</p>
+                            <span class="cusMT"> 1,41,567 MT</span>
+                            <span class="cusOT">22, 098</span>
+                          </li>
+                          <li>
+                            <img src="Img/Statelist/Karnataka.png" alt="" title=""/>
+                            <h4>Karnatka </h4>
+                            <p><img src="Img/Statelist/Icon/GraphDown.png" alt="" title=""/> 2%</p>
+                            <span class="cusMT"> 1,41,567 MT</span>
+                            <span class="cusOT">22, 098</span>
+                          </li>
+                          <li>
+                            <img src="Img/Statelist/Haryana.png" alt="" title=""/>
+                            <h4>Haryana</h4>
+                            <p><img src="Img/Statelist/Icon/GraphDown.png" alt="" title=""/> 2%</p>
+                            <span class="cusMT"> 1,41,567 MT</span>
+                            <span class="cusOT">22, 098</span>
+                          </li>
+                          <li>
+                            <img src="Img/Statelist/Tamil Nadu.png" alt="" title=""/>
+                            <h4>Tamil Nadu</h4>
+                            <p><img src="Img/Statelist/Icon/GraphDown.png" alt="" title=""/> 2%</p>
+                            <span class="cusMT"> 1,41,567 MT</span>
+                            <span class="cusOT">22, 098</span>
+                          </li>
+                          <li>
+                            <img src="Img/Statelist/Rajasthan.png" alt="" title=""/>
+                            <h4>Rajasthan</h4>
+                            <p><img src="Img/Statelist/Icon/GraphDown.png" alt="" title=""/> 2%</p>
+                            <span class="cusMT"> 1,41,567 MT</span>
+                            <span class="cusOT">22, 098</span>
+                          </li>
+                          <li>
+                            <img src="Img/Statelist/Chattisgarh.png" alt="" title=""/>
+                            <h4>Chhatisgarh</h4>
+                            <p><img src="Img/Statelist/Icon/GraphDown.png" alt="" title=""/> 2%</p>
+                            <span class="cusMT"> 1,41,567 MT</span>
+                            <span class="cusOT">22, 098</span>
+                          </li>
+                          <li>
+                            <img src="Img/Statelist/Gujarat.png" alt="" title=""/>
+                            <h4>Gujarat</h4>
+                            <p><img src="Img/Statelist/Icon/GraphDown.png" alt="" title=""/> 2%</p>
+                            <span class="cusMT"> 1,41,567 MT</span>
+                            <span class="cusOT">22, 098</span>
+                          </li>
+                        </ul>
+                      </div>
+                       <div id="NilVL" class="tab-pane fade">
+                        <p>Click on a particular state to view the whole data set</p>
+                        <ul class="cus-state-list">
+                          <li>
+                            <img src="Img/Statelist/MP.png" alt="" title=""/>
+                            <h4>Madhya Pradesh</h4>
+                            <p><img src="Img/Statelist/Icon/GraphDown.png" alt="" title=""/> 2%</p>
+                            <span class="cusMT"> 1,41,567 MT</span>
+                            <span class="cusOT">22, 098</span>
+                          </li>
+                          <li>
+                            <img src="Img/Statelist/Karnataka.png" alt="" title=""/>
+                            <h4>Karnatka </h4>
+                            <p><img src="Img/Statelist/Icon/GraphDown.png" alt="" title=""/> 2%</p>
+                            <span class="cusMT"> 1,41,567 MT</span>
+                            <span class="cusOT">22, 098</span>
+                          </li>
+                          <li>
+                            <img src="Img/Statelist/Haryana.png" alt="" title=""/>
+                            <h4>Haryana</h4>
+                            <p><img src="Img/Statelist/Icon/GraphDown.png" alt="" title=""/> 2%</p>
+                            <span class="cusMT"> 1,41,567 MT</span>
+                            <span class="cusOT">22, 098</span>
+                          </li>
+                          <li>
+                            <img src="Img/Statelist/Tamil Nadu.png" alt="" title=""/>
+                            <h4>Tamil Nadu</h4>
+                            <p><img src="Img/Statelist/Icon/GraphDown.png" alt="" title=""/> 2%</p>
+                            <span class="cusMT"> 1,41,567 MT</span>
+                            <span class="cusOT">22, 098</span>
+                          </li>
+                          <li>
+                            <img src="Img/Statelist/Rajasthan.png" alt="" title=""/>
+                            <h4>Rajasthan</h4>
+                            <p><img src="Img/Statelist/Icon/GraphDown.png" alt="" title=""/> 2%</p>
+                            <span class="cusMT"> 1,41,567 MT</span>
+                            <span class="cusOT">22, 098</span>
+                          </li>
+                          <li>
+                            <img src="Img/Statelist/Chattisgarh.png" alt="" title=""/>
+                            <h4>Chhatisgarh</h4>
+                            <p><img src="Img/Statelist/Icon/GraphDown.png" alt="" title=""/> 2%</p>
+                            <span class="cusMT"> 1,41,567 MT</span>
+                            <span class="cusOT">22, 098</span>
+                          </li>
+                          <li>
+                            <img src="Img/Statelist/Gujarat.png" alt="" title=""/>
+                            <h4>Gujarat</h4>
+                            <p><img src="Img/Statelist/Icon/GraphDown.png" alt="" title=""/> 2%</p>
+                            <span class="cusMT"> 1,41,567 MT</span>
+                            <span class="cusOT">22, 098</span>
+                          </li>
+                        </ul>
+                      </div>
+                      <p class="text-center cus-footer-tit"><img src="Img/Statelist/Icon/IdeaIcon.png"/> 11,205 farmers benefited from PSF scheme for the 2022 annual season, as compared to 2021
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="cusAllSelectedStateList">
+                  <div class="row">
+                    <div class="col-sm-12">
+                      <h2 class="cus-PSF">
+                        <button class="btn toggleBackicon"><img src="Img/Statelist/Icon/Backicon.png" alt="" title=""/></button>
+                        <strong>PSF Scheme Procurement In</strong>
+                        <!-- <span class="btn cus-select-city">India</span> -->
+                        <form class="btn cus-select-city">
+                          <select name="state" id="Selectstate">
+                            <option value="IN-UP"> Uttar Pradesh</option>
+                            <option value="IN-MH"> Maharashtra</option>
+                            <option value="IN-BR"> Bihar</option>
+                            <option value="IN-WB"> West Bengal</option>
+                            <option value="IN-MP" selected > Madhya Pradesh</option>
+                            <option value="IN-TN"> Tamil Nadu</option>
+                            <option value="IN-RJ"> Rajasthan</option>
+                            <option value="IN-KA"> Karnataka</option>
+                            <option value="IN-GJ"> Gujarat</option>
+                            <option value="IN-AP"> Andhra Pradesh</option>
+                            <option value="IN-OR"> Orissa</option>
+                            <option value="IN-TG"> Telangana</option>
+                            <option value="IN-KL"> Kerala</option>
+                            <option value="IN-JH"> Jharkhand</option>
+                            <option value="IN-AS"> Assam</option>
+                            <option value="IN-PB"> Punjab</option>
+                            <option value="IN-CT"> Chhattisgarh</option>
+                            <option value="IN-HR"> Haryana</option>
+                            <option value="IN-JK"> Jammu and Kashmir</option>
+                            <option value="IN-UT"> Uttarakhand</option>
+                            <option value="IN-HP"> Himachal Pradesh</option>
+                            <option value="IN-TR"> Tripura</option>
+                            <option value="IN-ML"> Meghalaya</option>
+                            <option value="IN-MN"> Manipur</option>
+                            <option value="IN-NL"> Nagaland</option>
+                            <option value="IN-GA"> Goa</option>
+                            <option value="IN-AR"> Arunachal Pradesh</option>
+                            <option value="IN-MZ"> Mizoram</option>
+                            <option value="IN-SK"> Sikkim</option>
+                            <option value="IN-DL"> Delhi</option>
+                            <option value="IN-PY"> Puducherry</option>
+                            <option value="IN-CH"> Chandigarh</option>
+                            <option value="IN-AN"> Andaman and Nicobar Islands</option>
+                            <option value="IN-DN"> Dadra and Nagar Haveli</option>
+                            <option value="IN-DD"> Daman and Diu</option>
+                            <option value="IN-LD"> Lakshadwee</option>
+                          </select>
+                        </form>
+                      </h2>
+                    </div>
+                    <div class="col-sm-12">
+                      <div>
+                        <p>Click on a particular state to view the whole data set</p>
+                        <ul class="cus-state-list cus-other-state-list">
+                          <li>
+                            <img src="Img/Statelist/MP.png" alt="" title=""/>
+                            <h4>Chhatarpur</h4>
+                            <p class="cusGraphRation"><img src="Img/Statelist/Icon/GraphDown.png" alt="" title=""/> 2%</p>
+                            <span class="cusMT"> 1,41,567 MT</span>
+                            <span class="cusOT">22, 098</span>
+                          </li>
+                          <li>
+                            <img src="Img/Statelist/Karnataka.png" alt="" title=""/>
+                            <h4>Narsinghpur </h4>
+                            <p class="cusGraphRation"><img src="Img/Statelist/Icon/GraphDown.png" alt="" title=""/> 2%</p>
+                            <span class="cusMT"> 1,41,567 MT</span>
+                            <span class="cusOT">22, 098</span>
+                          </li>
+                          <li>
+                            <img src="Img/Statelist/Haryana.png" alt="" title=""/>
+                            <h4>Hoshangabad</h4>
+                            <p class="cusGraphRation"><img src="Img/Statelist/Icon/GraphDown.png" alt="" title=""/> 2%</p>
+                            <span class="cusMT"> 1,41,567 MT</span>
+                            <span class="cusOT">22, 098</span>
+                          </li>
+                          <li>
+                            <img src="Img/Statelist/Tamil Nadu.png" alt="" title=""/>
+                            <h4>Hoshangabad</h4>
+                            <p class="cusGraphRation"><img src="Img/Statelist/Icon/GraphDown.png" alt="" title=""/> 2%</p>
+                            <span class="cusMT"> 1,41,567 MT</span>
+                            <span class="cusOT">22, 098</span>
+                          </li>
+                          <li>
+                            <img src="Img/Statelist/Rajasthan.png" alt="" title=""/>
+                            <h4>Mandsaur</h4>
+                            <p class="cusGraphRation"><img src="Img/Statelist/Icon/GraphDown.png" alt="" title=""/> 2%</p>
+                            <span class="cusMT"> 1,41,567 MT</span>
+                            <span class="cusOT">22, 098</span>
+                          </li>
+                          <li>
+                            <img src="Img/Statelist/Chattisgarh.png" alt="" title=""/>
+                            <h4>Ashoknagar</h4>
+                            <p class="cusGraphRation"><img src="Img/Statelist/Icon/GraphDown.png" alt="" title=""/> 2%</p>
+                            <span class="cusMT"> 1,41,567 MT</span>
+                            <span class="cusOT">22, 098</span>
+                          </li>
+                          <li>
+                            <img src="Img/Statelist/Gujarat.png" alt="" title=""/>
+                            <h4>Narsinghpur</h4>
+                            <p class="cusGraphRation"><img src="Img/Statelist/Icon/GraphDown.png" alt="" title=""/> 2%</p>
+                            <span class="cusMT"> 1,41,567 MT</span>
+                            <span class="cusOT">22, 098</span>
+                          </li>
+                          <li>
+                            <img src="Img/Statelist/Rajasthan.png" alt="" title=""/>
+                            <h4>Chhatarpur</h4>
+                            <p class="cusGraphRation"><img src="Img/Statelist/Icon/GraphDown.png" alt="" title=""/> 2%</p>
+                            <span class="cusMT"> 1,41,567 MT</span>
+                            <span class="cusOT">22, 098</span>
+                          </li>
+                          <li>
+                            <img src="Img/Statelist/Chattisgarh.png" alt="" title=""/>
+                            <h4>Ashoknagar</h4>
+                            <p class="cusGraphRation"><img src="Img/Statelist/Icon/GraphDown.png" alt="" title=""/> 2%</p>
+                            <span class="cusMT"> 1,41,567 MT</span>
+                            <span class="cusOT">22, 098</span>
+                          </li>
+                          <li>
+                            <img src="Img/Statelist/Gujarat.png" alt="" title=""/>
+                            <h4>Mandsaur</h4>
+                            <p class="cusGraphRation"><img src="Img/Statelist/Icon/GraphDown.png" alt="" title=""/> 2%</p>
+                            <span class="cusMT"> 1,41,567 MT</span>
+                            <span class="cusOT">22, 098</span>
+                          </li>
+                          <li>
+                            <img src="Img/Statelist/Rajasthan.png" alt="" title=""/>
+                            <h4>Chhatarpur</h4>
+                            <p class="cusGraphRation"><img src="Img/Statelist/Icon/GraphDown.png" alt="" title=""/> 2%</p>
+                            <span class="cusMT"> 1,41,567 MT</span>
+                            <span class="cusOT">22, 098</span>
+                          </li>
+                          <li>
+                            <img src="Img/Statelist/Chattisgarh.png" alt="" title=""/>
+                            <h4>Ashoknagar</h4>
+                            <p class="cusGraphRation"><img src="Img/Statelist/Icon/GraphDown.png" alt="" title=""/> 2%</p>
+                            <span class="cusMT"> 1,41,567 MT</span>
+                            <span class="cusOT">22, 098</span>
+                          </li>
+                          <li>
+                            <img src="Img/Statelist/Gujarat.png" alt="" title=""/>
+                            <h4>Mandsaur</h4>
+                            <p class="cusGraphRation"><img src="Img/Statelist/Icon/GraphDown.png" alt="" title=""/> 2%</p>
+                            <span class="cusMT"> 1,41,567 MT</span>
+                            <span class="cusOT">22, 098</span>
+                          </li>
+                          <li>
+                            <img src="Img/Statelist/Rajasthan.png" alt="" title=""/>
+                            <h4>Chhatarpur</h4>
+                            <p class="cusGraphRation"><img src="Img/Statelist/Icon/GraphDown.png" alt="" title=""/> 2%</p>
+                            <span class="cusMT"> 1,41,567 MT</span>
+                            <span class="cusOT">22, 098</span>
+                          </li>
+                          <li>
+                            <img src="Img/Statelist/Chattisgarh.png" alt="" title=""/>
+                            <h4>Ashoknagar</h4>
+                            <p class="cusGraphRation"><img src="Img/Statelist/Icon/GraphDown.png" alt="" title=""/> 2%</p>
+                            <span class="cusMT"> 1,41,567 MT</span>
+                            <span class="cusOT">22, 098</span>
+                          </li>
+                          <li>
+                            <img src="Img/Statelist/Gujarat.png" alt="" title=""/>
+                            <h4>Mandsaur</h4>
+                            <p class="cusGraphRation"><img src="Img/Statelist/Icon/GraphDown.png" alt="" title=""/> 2%</p>
+                            <span class="cusMT"> 1,41,567 MT</span>
+                            <span class="cusOT">22, 098</span>
+                          </li>
+                          <li>
+                            <img src="Img/Statelist/Rajasthan.png" alt="" title=""/>
+                            <h4>Chhatarpur</h4>
+                            <p class="cusGraphRation"><img src="Img/Statelist/Icon/GraphDown.png" alt="" title=""/> 2%</p>
+                            <span class="cusMT"> 1,41,567 MT</span>
+                            <span class="cusOT">22, 098</span>
+                          </li>
+                          <li>
+                            <img src="Img/Statelist/Chattisgarh.png" alt="" title=""/>
+                            <h4>Ashoknagar</h4>
+                            <p class="cusGraphRation"><img src="Img/Statelist/Icon/GraphDown.png" alt="" title=""/> 2%</p>
+                            <span class="cusMT"> 1,41,567 MT</span>
+                            <span class="cusOT">22, 098</span>
+                          </li>
+                          <li>
+                            <img src="Img/Statelist/Gujarat.png" alt="" title=""/>
+                            <h4>Mandsaur</h4>
+                            <p class="cusGraphRation"><img src="Img/Statelist/Icon/GraphDown.png" alt="" title=""/> 2%</p>
+                            <span class="cusMT"> 1,41,567 MT</span>
+                            <span class="cusOT">22, 098</span>
+                          </li>
+                          <li>
+                            <img src="Img/Statelist/Rajasthan.png" alt="" title=""/>
+                            <h4>Chhatarpur</h4>
+                            <p class="cusGraphRation"><img src="Img/Statelist/Icon/GraphDown.png" alt="" title=""/> 2%</p>
+                            <span class="cusMT"> 1,41,567 MT</span>
+                            <span class="cusOT">22, 098</span>
+                          </li>
+                          <li>
+                            <img src="Img/Statelist/Chattisgarh.png" alt="" title=""/>
+                            <h4>Ashoknagar</h4>
+                            <p class="cusGraphRation"><img src="Img/Statelist/Icon/GraphDown.png" alt="" title=""/> 2%</p>
+                            <span class="cusMT"> 1,41,567 MT</span>
+                            <span class="cusOT">22, 098</span>
+                          </li>
+                          <li>
+                            <img src="Img/Statelist/Gujarat.png" alt="" title=""/>
+                            <h4>Mandsaur</h4>
+                            <p class="cusGraphRation"><img src="Img/Statelist/Icon/GraphDown.png" alt="" title=""/> 2%</p>
+                            <span class="cusMT"> 1,41,567 MT</span>
+                            <span class="cusOT">22, 098</span>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Body Sidebar Right End -->
+        </div>
+      <div>
+      <section class="cus-sidebarRightWrapper">
+        <button class="toggle-btn-group"></button>
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-sm-12">
+              <h2 class="cus-hideBarTit">Price Support Fund</h2>
+              <ul class="nav nav-tabs cus-hideBarNavBar" id="myTab" role="tablist">
+                <li class="nav-item">
+                  <a class="nav-link active" id="home-tab" data-toggle="tab" href="#PSS" role="tab" aria-controls="home" aria-selected="true">PSS</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" id="profile-tab" data-toggle="tab" href="#PSF" role="tab" aria-controls="profile" aria-selected="false">PSF</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" id="contact-tab" data-toggle="tab" href="#FCI" role="tab" aria-controls="contact" aria-selected="false">FCI</a>
+                </li>
+              </ul>
+              <div class="tab-content cus-hidecontentBar" id="myTabContent">
+                <div class="tab-pane fade show active" id="PSS" role="tabpanel" aria-labelledby="home-tab">
+                  <div id="accordion" class="cus-hidecontentBarAccording">
+                    <div class="card">
+                      <div class="card-header">
+                        <a class="card-link" data-toggle="collapse" href="#collapseOne">
+                          All seasons 2021-2022
+                        </a>
+                      </div>
+                      <div id="collapseOne" class="collapse show" data-parent="#accordion">
+                        <div class="card-body">
+                          Lorem ipsum..
+                        </div>
+                      </div>
+                    </div>
+                  
+                    <div class="card">
+                      <div class="card-header">
+                        <a class="collapsed card-link" data-toggle="collapse" href="#collapseTwo">
+                          All seasons 2020-2021
+                        </a>
+                      </div>
+                      <div id="collapseTwo" class="collapse" data-parent="#accordion">
+                        <div class="card-body">
+                          Lorem ipsum..
+                        </div>
+                      </div>
+                    </div>
+                  
+                    <div class="card">
+                      <div class="card-header">
+                        <a class="collapsed card-link" data-toggle="collapse" href="#collapseThree">
+                          All seasons 2019-2020
+                        </a>
+                      </div>
+                      <div id="collapseThree" class="collapse" data-parent="#accordion">
+                        <div class="card-body">
+                          Lorem ipsum..
+                        </div>
+                      </div>
+                    </div>
+                  
+                  </div>
+                </div>
+                <div class="tab-pane fade" id="PSF" role="tabpanel" aria-labelledby="profile-tab">
+
+                </div>
+                <div class="tab-pane fade" id="FCI" role="tabpanel" aria-labelledby="contact-tab">
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
+    <!-- Body Code End -->
+
+  
+
+    <!-- Footer Code End -->
+    <footer class="cus-footer">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-sm-12">
+            <img src="./Img/Footer-bg.png" alt="Footer" title="Footer" class="w-100"/>
+          </div>
+        </div>
+      </div>    
+    </footer>
+    <!-- Footer Code End -->
+  </main>
+  <script type="text/javascript">
+
+    $(document).ready(function() {  
+        $('.cusBtnGroup li').click(function(){  
+          $(this).addClass('active').siblings().removeClass('active')
+        });  
+    });
+
+  // Themes begin
+  am4core.useTheme(am4themes_animated);
+  // Themes end
+
+  // Create map instance
+  var chart = am4core.create("chartdiv", am4maps.MapChart);
+
+  // Set map definition
+  chart.geodata = am4geodata_india2019High;
+
+  // Create map polygon series
+  var polygonSeries = chart.series.push(new am4maps.MapPolygonSeries());
+
+// Configure series Tooltip
+var tooltipHTML = `<div class="cusToolTip"><left><img src="Img/location.png"/> <strong>{name} </strong></left>
+
+<table class="cusToolTipTable">
+<tr>
+  <th align="left" class="cusToolTipTit">Lot Count</th>
+  <td class="cusToolTipVal"><strong>{LotCount}</strong></td>
+</tr>
+<tr>
+  <th align="left" class="cusToolTipTit">Procured Qty</th>
+  <td class="cusToolTipVal"><strong>{ProcuredQty}</strong></td>
+</tr>
+</table></ddiv>`;
+
+let polygonTemplate = polygonSeries.mapPolygons.template;
+  polygonTemplate.tooltipHTML = tooltipHTML;
+  polygonTemplate.nonScalingStroke = true;
+  polygonTemplate.strokeWidth = 0.5;
+  polygonTemplate.propertyFields.fill = "fill";
+  // polygonTemplate.tooltip.background_Color.fill = am4core.color("#67b7dc");
+  
+  // console.log("====polygonSeries.mapPolygons.template=========", polygonSeries.mapPolygons.template)
+// Make map load polygon data (state shapes and names) from GeoJSON
+polygonSeries.useGeodata = true;
+
+// Configure series Set Colors
+var gradientHigh = new am4core.LinearGradient();
+    gradientHigh.addColor(am4core.color("#6966CD"));
+    gradientHigh.addColor(am4core.color("#8A86FF"));
+    gradientHigh.rotation = 308.33;
+
+var gradientMedium = new am4core.LinearGradient();
+    gradientMedium.addColor(am4core.color("#21D1F8"));
+    gradientMedium.addColor(am4core.color("#19AFD0"));
+    gradientMedium.rotation = 180;      
+
+var gradientLow = new am4core.LinearGradient();
+    gradientLow.addColor(am4core.color("#FFDF8C"));
+    gradientLow.addColor(am4core.color("#FFB901"));
+    gradientLow.rotation = 126.21;
+
+var gradientNil = new am4core.LinearGradient();
+    gradientNil.addColor(am4core.color("#FF537D"));
+    gradientNil.addColor(am4core.color("#FF3943"));
+    gradientNil.rotation = 180;
+
+// Set heatmap values for each state
+polygonSeries.data = [
+  {
+    id: "IN-AR",  
+    name: "Arunachal Pradesh",
+    zone: "Nil",
+    value: 38,
+    LotCount : 213312,
+    ProcuredQty : '127,789 MT',
+    "fill": gradientNil
+  },
+  {
+    id: "IN-LD",  
+    name: "Lakshadweep", 
+    zone: "Medium",
+    value: 37,
+    LotCount : 213312,
+    ProcuredQty : '127,789 MT',
+    "fill": gradientMedium
+  },    
+  {
+    id: "IN-LD",  
+    name: "Lakshadweep", 
+    zone: "Medium",
+    value: 36,
+    LotCount : 213312,
+    ProcuredQty : '127,789 MT',
+    "fill": gradientMedium
+  },  
+  {
+    id: "IN-PY",  
+    name: "Puducherry", 
+    zone: "Medium",
+    value: 35,
+    LotCount : 213312,
+    ProcuredQty : '127,789 MT',
+    "fill": gradientMedium
+  },
+  {
+    id: "IN-JK",
+    name: "Jammu And Kashmir", 
+    zone: "Low",
+    value: 34, 
+    LotCount : 213312,
+    ProcuredQty : '127,789 MT',
+    "fill": gradientLow
+  },
+  {
+    id: "IN-MH",
+    name: "Maharashtra", 
+    zone: "High",
+    value: 33, 
+    LotCount : 213312,
+    ProcuredQty : '127,789 MT',
+    "fill": gradientHigh
+  },
+  {
+    id: "IN-UP",
+    name: "Uttar Pradesh", 
+    zone: "Medium",
+    value: 32, 
+    LotCount : 213312,
+    ProcuredQty : '127,789 MT',
+    "fill": gradientMedium
+  },
+  {
+    id: "IN-RJ",
+    name: "Rajasthan", 
+    zone: "High",
+    value: 31, 
+    LotCount : 213312,
+    ProcuredQty : '127,789 MT',
+    "fill": gradientHigh
+  },
+  {
+    id: "IN-AP",
+    name: "Andhra Pradesh",
+    zone: "Medium",
+    value: 30, 
+    LotCount : 213312,
+    ProcuredQty : '127,789 MT',
+    "fill": gradientMedium
+  },
+  {
+    id: "IN-MP",
+    name: "Madhya Pradesh", 
+    zone: "High",
+    value: 29, 
+    LotCount : 213312,
+    ProcuredQty : '127,789 MT',
+    "fill": gradientHigh
+  },
+  {
+    id: "IN-TN",
+    name: "Tamil Nadu", 
+    zone: "High",
+    value: 28,
+    LotCount : 213312,
+    ProcuredQty : '127,789 MT',
+    "fill": gradientHigh
+  },
+  {
+    id: "IN-JH",
+    name: "Jharkhand", 
+    zone: "Medium",
+    value: 27,
+    LotCount : 213312,
+    ProcuredQty : '127,789 MT',
+    "fill": gradientMedium
+  },
+  {
+    id: "IN-WB",
+    name: "West Bengal", 
+    zone: "Nil",
+    value: 26,
+    LotCount : 213312,
+    ProcuredQty : '127,789 MT',
+    "fill": gradientNil
+  },
+  {
+    id: "IN-GJ",
+    name: "Gujarat", 
+    zone: "High", 
+    value: 25,
+    LotCount : 213312,
+    ProcuredQty : '127,789 MT',
+    "fill": gradientHigh
+  },
+  {
+    id: "IN-BR",
+    name: "Bihar", 
+    zone: "Medium",
+    value: 24,
+    LotCount : 213312,
+    ProcuredQty : '127,789 MT',
+    "fill": gradientMedium
+  },
+  {
+    id: "IN-TG",
+    name: "Telangana", 
+    zone: "Medium",
+    value: 23,
+    LotCount : 213312,
+    ProcuredQty : '127,789 MT',
+    "fill": gradientMedium
+  },
+  {
+    id: "IN-GA",
+    name: "Goa", 
+    zone: "Medium",
+    value: 22,
+    LotCount : 213312,
+    ProcuredQty : '127,789 MT',
+    "fill": gradientMedium
+  },
+  {
+    id: "IN-DN",
+    name: "Dadra And Nagar Haveli", 
+    zone: "Medium",
+    value: 21,
+    LotCount : 213312,
+    ProcuredQty : '127,789 MT',
+    "fill": gradientMedium
+  },
+  {
+    id: "IN-DL",
+    name: "Delhi", 
+    zone: "Medium",
+    value: 20,
+    LotCount : 213312,
+    ProcuredQty : '127,789 MT',
+    "fill": gradientMedium
+  },
+  {
+    id: "IN-DD",
+    name: "Daman And Diu", 
+    zone: "Medium",
+    value: 19,
+    LotCount : 213312,
+    ProcuredQty : '127,789 MT',
+    "fill": gradientMedium
+  },
+  {
+    id: "IN-CH",
+    name: "Chandigarh", 
+    zone: "Medium",
+    value: 18,
+    LotCount : 213312,
+    ProcuredQty : '127,789 MT',
+    "fill": gradientMedium
+  },
+  {
+    id: "IN-CT",
+    name: "Chhattisgarh", 
+    zone: "High",
+    value: 17,
+    LotCount : 213312,
+    ProcuredQty : '127,789 MT',
+    "fill": gradientHigh
+  },
+  {
+    id: "IN-AS",
+    name: "Assam", 
+    zone: "Medium",
+    value: 16,
+    LotCount : 213312,
+    ProcuredQty : '127,789 MT',
+    "fill": gradientMedium
+  },
+  {
+    id: "IN-AN",
+    name: "Andaman And Nicobar",
+    hide: 'yes',
+    value: 15,
+  },
+  {
+    id: "IN-KA", 
+    name: "Karnataka", 
+    zone: "Medium",
+    value: 14,
+    LotCount : 213312,
+    ProcuredQty : '127,789 MT',
+    "fill": gradientMedium
+  },
+  {
+    id: "IN-KL",
+    name: "Kerala", 
+    zone: "Medium",
+    value: 13,
+    LotCount : 213312,
+    ProcuredQty : '127,789 MT',
+    "fill": gradientMedium
+  },
+  {
+    id: "IN-OR",
+    name: "Orissa", 
+    zone: "Medium",
+    value: 12,
+    LotCount : 213312,
+    ProcuredQty : '127,789 MT',
+    "fill": gradientMedium
+  },
+  {
+    id: "IN-SK",
+    name: "Sikkim",
+    zone: "Nil",
+    value: 11,
+    LotCount : 213312,
+    ProcuredQty : '127,789 MT',
+    "fill": gradientNil
+  },
+  {
+    id: "IN-HP",
+    name: "Himachal Pradesh", 
+    zone: "Nil",
+    value: 10,
+    LotCount : 213312,
+    ProcuredQty : '127,789 MT',
+    "fill": gradientNil
+  },
+  {
+    id: "IN-PB",
+    name: "Punjab", 
+    zone: "Medium",
+    value: 9,
+    LotCount : 213312,
+    ProcuredQty : '127,789 MT',
+    "fill": gradientMedium
+  },
+  {
+    id: "IN-HR",
+    name: "Haryana", 
+    zone: "High",
+    value: 8,
+    LotCount : 213312,
+    ProcuredQty : '127,789 MT',
+    "fill": gradientHigh
+  },
+  {
+    id: "IN-UT",
+    name: "Uttaranchal", 
+    zone: "Nil",
+    value: 7,
+    LotCount : 213312,
+    ProcuredQty : '127,789 MT',
+    "fill": gradientNil
+  },
+  {
+    id: "IN-LK",
+    name: "Ladakh", 
+    zone: "Low",
+    value: 6,
+    LotCount : 213312,
+    ProcuredQty : '127,789 MT',
+    "fill": gradientLow
+  },
+  {
+    id: "IN-MN",
+    name: "Manipur", 
+    zone: "Low",
+    value: 5,
+    LotCount : 213312,
+    ProcuredQty : '127,789 MT',
+    "fill": gradientLow
+  },
+  {
+    id: "IN-TR",
+    name: "Tripura", 
+    zone: "Low",
+    value: 4,
+    LotCount : 213312,
+    ProcuredQty : '127,789 MT',
+    "fill": gradientLow
+  },
+  {
+    id: "IN-MZ",
+    name: "Mizoram", 
+    zone: "Low",
+    value: 3,
+    LotCount : 213312,
+    ProcuredQty : '127,789 MT',
+    "fill": gradientLow
+  },
+  {
+    id: "IN-NL",
+    name: "Nagaland", 
+    zone: "Medium",
+    value: 2,
+    LotCount : 213312,
+    ProcuredQty : '127,789 MT',
+    "fill": gradientMedium
+  },
+  {
+    id: "IN-ML",
+    name: "Meghalaya", 
+    zone: "Medium",
+    value: 1, 
+    LotCount : 213312,
+    ProcuredQty : '127,789 MT',
+    "fill": gradientMedium
+  }
+];
+
+</script>
+<script>
+  $(document).ready(function(){
+    $(".btnShowCommi, .btnCloseCommi").click(function() {
+      $(".cusCombtnGroup").toggleClass("cusBtnChange")  
+      $(".cusHideCommList").toggleClass("cusCommActive")
+    });
+
+    $(".toggle-btn-group").click(function(){
+      $(".cus-sidebarRightWrapper").toggleClass("openSidebar");
+    });
+
+
+    $(".cusSelectedStat").click(function() {
+        $(".cus-listView-bg").hide();
+        $(".cusAllSelectedStateList").show();
+    });
+    $(".toggleBackicon").click(function() {
+      $(".cusAllSelectedStateList").hide();
+      $(".cus-listView-bg").show();
+    });
+  
+  });
+</script>
+</body>
+</html>
